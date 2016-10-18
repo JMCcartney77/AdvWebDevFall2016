@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p>Open browser console</p>
+        
+        <script type="text/javascript">
+			// Closure Value is only active in the function running//
+			//Strict Mode //
+            'use strict';
+			/* 
+* Fix the console.log by replacing the single quotes in the 
+* comparison with the correct value 
+* Also add a comment explaining the reason for the answer
+* 
+* Adding 5 to a until 100 is reached. Also had to change a == 5, to a === 5 to make the value true.
+*/ 
+for ( var a = 0; a < 5; a++ ) {
+  setTimeout(function(){
+    console.log( a === 5, 'What is the value of a.' ); 
+  }, 100); 
+}
+        </script>
+    </body>
+</html>

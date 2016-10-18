@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p>Open browser console</p>
+        
+        <script type="text/javascript">
+			// Closure Value is only active in the function running//
+			//Strict Mode //
+            'use strict';
+			/* 
+* Fix the console.log by replacing the single quotes in the 
+* comparison with the correct value 
+*/ 
+function outerRun(){ 
+  function innerRun(){ 
+    console.log( a === 7, 'What is the value of a.' ); 
+    console.log( b === 8, 'What is the value of b.' ); 
+  }
+  var a = 7; 
+  var b = 8; 
+  innerRun(); 
+} 
+outerRun();
+        </script>
+    </body>
+</html>
