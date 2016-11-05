@@ -11,9 +11,13 @@ http.createServer(function (request, response) {
     
     var fileName = pathName.substr(1); /* lets remove the "/" from the name */
     console.log('filename=',fileName);// Use console.log to just see what's going on with the file
+var fileNameComplete = fileName + '.json';
 
+    if (pathName === '/index'){
+        fileNameComplete = fileName + '.html'; 
+    } 
     /* lets try to read the html page found */
-    fileSystem.readFile(fileName , callback);
+    fileSystem.readFile(fileNameComplete , callback);
 
     function callback(err, data) {
         if (err) {
@@ -29,7 +33,12 @@ http.createServer(function (request, response) {
              * HTTP Status: 200 : OK
              * Content Type: text/html 
              */
-            response.writeHead(200, {'Content-Type': 'text/html'}); 
+            if (pathName === '/index'){
+             response.writeHead(200, {'Content-Type': 'text/html'});   
+            } else{
+            response.writeHead(200, {'Content-Type': 'application/json'}); 
+               
+            }
             response.write(data.toString());
         }     
         

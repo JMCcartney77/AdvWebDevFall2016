@@ -19,5 +19,5 @@ http.createServer(function (request, response) {
    response.end('Hello World\n');
 }).listen(3000); //This is one port you can use, it can be any unblocked port
 
-/* Console will print the message */d
+/* Console will print the message */
 console.log('Server running at http://localhost:3000/');
