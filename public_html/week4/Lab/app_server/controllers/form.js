@@ -4,16 +4,16 @@ function formView(req, res) {
 }
 
 function formPost(req, res) {
-    
+        
     if (req.method === 'POST') {
        res.render('results', { 
             title : 'Form Post Page',
-            author: req.body.author
+            fullName: req.body.fullName
         });       
     } else {
          res.render('results', { 
             title : 'Form Post Page',
-            author: 'No Author Found'
+            fullName: 'No Name Found'
         });
     }   
 }
