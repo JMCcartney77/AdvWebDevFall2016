@@ -6,9 +6,10 @@ var Review = require('../models/review');
 
 
   Review.create({
-    data1: 'data1',
-    data2: 'data2',
-    data3: 'data3'
+    author: 'data1',
+    rating: 'data2',
+    reviewText: 'data3',
+    createdOn: Date()
   },function (err) {           
      /* saved! Callbacks are optional */
      successCB();
