@@ -9,7 +9,7 @@ block content
         .form-group
           label.col-xs-10.col-sm-2.control-label(for="firstName") First Name
           .col-xs-12.col-sm-10
-            input#firstName.form-control(name="firstName")
+            input#firstName.form-control(name="firstName" pattern="^[A-Za-z]{10}$" required="required" title="First Name Required")
         .form-group
           label.col-xs-10.col-sm-2.control-label(for="lastName") Last Name
           .col-xs-12.col-sm-10
