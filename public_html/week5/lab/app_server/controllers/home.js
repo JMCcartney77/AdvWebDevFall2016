@@ -1,7 +1,7 @@
 /* GET 'home info' page */
 
 
-var Review = require('../models/review');
+var employeeSchema = require('../models/employeeSchema');
 
 module.exports.home = function(req, res){
     
@@ -15,13 +15,16 @@ module.exports.home = function(req, res){
     if (req.method === 'POST') {
         console.log(req.body);
         
-        Review.create({
-          author: req.body.name,
-          rating: req.body.rating,
-          reviewText: req.body.review
+        employeeSchema.create({
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
+          department: req.body.department,
+          startDate: req.body.startDate,
+          jobTitle: req.body.jobTitle,
+          salary: req.body.salary
         },function (err) {           
            // saved!
-           successCB('Review Saved');
+           successCB('Employee Saved');
         });
               
     } else {
@@ -37,7 +40,7 @@ module.exports.view = function(req, res){
          removed = '';
  
     function finish() {     
-       Review
+       employeeSchema
        .find()
        .exec(function(err, results){
 
@@ -54,7 +57,7 @@ module.exports.view = function(req, res){
          var removePromise = new Promise(
             function (resolve, reject) { 
                 
-                Review.remove({ _id: id }, function (err) {
+                employeeSchema.remove({ _id: id }, function (err) {
                    if (!err) {
                         resolve(' has been removed'); // success
                     } else {
@@ -90,18 +93,21 @@ module.exports.update = function(req, res){
          id = req.body._id;
          var query = { '_id': req.body._id };
          var update = {
-          author: req.body.name,
-          rating: req.body.rating,
-          reviewText: req.body.review
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
+          department: req.body.department,
+          startDate: req.body.startDate,
+          jobTitle: req.body.jobTitle,
+          salary: req.body.salary
         };
         var options = {};
         var callback = function(){};
-        Review.update(query, update, options, callback);
+        employeeSchema.update(query, update, options, callback);
         msg = 'data has been updated';
      }
     
     
-    Review
+    employeeSchema
     .findOne({ '_id': id })
     .exec(function(err, results){
     
