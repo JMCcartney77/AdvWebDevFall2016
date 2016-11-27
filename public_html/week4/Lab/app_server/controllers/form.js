@@ -8,12 +8,16 @@ function formPost(req, res) {
     if (req.method === 'POST') {
        res.render('results', { 
             title : 'Form Post Page',
-            fullName: req.body.fullName
+            fullName: req.body.fullName,
+            email: req.body.email,
+            comment: req.body.comment
         });       
     } else {
          res.render('results', { 
             title : 'Form Post Page',
-            fullName: 'No Name Found'
+            fullName: 'No Name Found',
+            email: 'No Email Found',
+            comment: 'No Comment Found'
         });
     }   
 }
