@@ -15,7 +15,7 @@
         activate();
         
         function activate(){
-            PhonesService.getPhones().then(function(reponse) {
+            PhonesService.getPhones().then(function(response) {
                 vm.phones = response;
             });
         }
