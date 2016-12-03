@@ -1,0 +1,9 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+    h1=title
+    p
+        a(href="./form") Form
+    +outputReviews(results)

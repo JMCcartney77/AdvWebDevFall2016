@@ -1,0 +1,40 @@
+extends layout
+
+block content
+ h1=title
+ p
+    a(href="./") Home
+ h2=message
+ form.form-horizontal(action="/form", method="post", role="form")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="firstName") First Name
+          .col-xs-12.col-sm-10
+            input#firstName.form-control(name="firstName" required="required" title="First Name Required")
+
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="lastName") Last Name
+          .col-xs-12.col-sm-10
+            input#lastName.form-control(name="lastName" required="required")
+
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="department") Department
+          .col-xs-12.col-sm-10
+            input#department.form-control(name="department" required="required")
+
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="startDate") Start Date
+          .col-xs-12.col-sm-10
+            input#startDate.form-control(name="startDate" required="required" type="date")
+
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="jobTitle") Job Title
+          .col-xs-12.col-sm-10
+            input#jobTitle.form-control(name="jobTitle" required="required")
+
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="salary") Salary
+          .col-xs-12.col-sm-10
+            input#salary.form-control(name="salary" required="required")
+        .form-group
+          
+        input(type="submit" class="btn btn-primary" value="Add Employee") 
