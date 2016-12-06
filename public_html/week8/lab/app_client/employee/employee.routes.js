@@ -14,6 +14,16 @@
               controller: 'EmployeeHomeController',
               controllerAs: 'vm'
           }).
+          when('/add', {
+              templateUrl: '/employee/employee-form.view.html',
+              controller: 'EmployeeCreateController',
+              controllerAs: 'vm'
+          }). 
+          when('/update/:id', {
+              templateUrl: '/employee/employee-form.view.html',
+              controller: 'EmployeeUpdateController',
+              controllerAs: 'vm'
+          }).
                   
           otherwise({
             redirectTo: '/'
@@ -22,15 +32,8 @@
 
 })();
 
-/* To be done in next steps
+
          
-          when('/add', {
-              templateUrl: '/review/review-form.view.html',
-              controller: 'ReviewCreateController',
-              controllerAs: 'vm'
-          }).
-          when('/update/:id', {
-              templateUrl: '/review/review-form.view.html',
-              controller: 'ReviewUpdateController',
-              controllerAs: 'vm'
-          }).*/
+          
+                  
+          

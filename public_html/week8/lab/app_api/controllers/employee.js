@@ -8,7 +8,7 @@ function sendJSONresponse(res, status, content) {
 
 module.exports.readAll = function (req, res) {
 
-    console.log('Getting all reviews');
+    console.log('Getting all Employees');
     employeeSchema
             .find()
             .exec(function (err, results) {
@@ -25,7 +25,7 @@ module.exports.readAll = function (req, res) {
 module.exports.readOne = function (req, res) {
 
     if (req.params && req.params.employeeid) {
-        console.log('Getting single review with id =', req.params.employeeid);
+        console.log('Getting single employee with id =', req.params.employeeid);
         employeeSchema
                 .findById(req.params.employeeid)
                 .exec(function (err, results) {
@@ -47,11 +47,11 @@ module.exports.readOne = function (req, res) {
     }
 };
 
-module.exports.reviewsCreate = function (req, res) {
+/*module.exports.employeeCreate = function (req, res) {
 
-    console.log('Creating a review with data ', req.body);
+    console.log('Creating a employee with data ', req.body);
 
-    Review.create({
+    employeeSchema.create({
         author: req.body.author,
         rating: req.body.rating,
         reviewText: req.body.reviewText
@@ -65,7 +65,7 @@ module.exports.reviewsCreate = function (req, res) {
     });
 
 
-};
+};*/
 
 
 

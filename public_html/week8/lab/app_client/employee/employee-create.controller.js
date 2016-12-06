@@ -3,21 +3,24 @@
     'use strict';
     angular
         .module('app.employee')
-        .controller('ReviewCreateController', ReviewCreateController);
+        .controller('EmployeeCreateController', EmployeeCreateController);
 
-    ReviewCreateController.$inject = ['ReviewService'];
+    EmployeeCreateController.$inject = ['EmployeeService'];
     
-    function ReviewCreateController(ReviewService) {
+    function EmployeeCreateController(EmployeeService) {
         var vm = this;
 
         vm.data = {
-            'author' : '',
-            'rating' : '',
-            'reviewText' : ''
+            'firstName' : '',
+            'lastName' : '',
+            'department' : '',
+            'startDate' : '',
+            'jobTitle' : '',
+            'salary' : ''
         };
         vm.submit = submit;
         vm.message = '';
-        vm.title = 'Add Review';
+        vm.title = 'Add Employee';
         
         activate();
 
@@ -26,7 +29,7 @@
         function activate() {}   
         
         function submit() {
-            ReviewService.addReview(vm.data)
+            EmployeeService.addEmployee(vm.data)
                 .then(function(data) {
                     vm.message = data;
                 });

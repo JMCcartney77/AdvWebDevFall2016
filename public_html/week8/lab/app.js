@@ -21,13 +21,13 @@ app.set('view engine', 'jade');
 /* This will allow you to take all the JS files and compress into one file */
 var appClientFiles = [
   'app_client/app.js',
-  'app_client/employee/employee.module.js'
-  /*'app_client/review/review.routes.js',
-  'app_client/review/review.constants.js',
-  'app_client/review/review.service.js',
-  'app_client/review/review-home.controller.js',
-  'app_client/review/review-create.controller.js',
-  'app_client/review/review-update.controller.js' */
+  'app_client/employee/employee.module.js',
+  'app_client/employee/employee.routes.js',
+  'app_client/employee/employee.constants.js',
+  'app_client/employee/employee.service.js',
+  'app_client/employee/employee-home.controller.js',
+  'app_client/employee/employee-create.controller.js',
+  'app_client/employee/employee-update.controller.js' 
 ];
 var uglified = uglifyJs.minify(appClientFiles, { compress : false });
 
@@ -66,7 +66,7 @@ app.use(function(reg, res, next){
 });
 
 app.use('/', routes);
-app.use('/api/v1', routesApi);
+app.use('/api/v1', routesApi);//http://localhost:3000/api/v1/employees to see the api data
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
