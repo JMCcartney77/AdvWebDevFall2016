@@ -14,7 +14,7 @@
         var id = $routeParams.phoneId;
         
         activate();
-        /////////
+        ////Shows the phone result/////
         function activate(){
             PhonesService.findPhone(id).then(function(response){
                 vm.phone = response;

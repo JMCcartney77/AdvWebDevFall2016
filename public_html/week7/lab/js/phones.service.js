@@ -4,7 +4,7 @@
     angular
             .module('app')
             .factory('PhonesService', PhonesService);
-
+//Inject the HTML and REQUEST services
     PhonesService.$inject = ['$http', 'REQUEST'];
 
     function PhonesService($http, REQUEST) {
@@ -16,7 +16,7 @@
         };
 
         return service;
-
+//Gets all phone info
         function getPhones() {
             return $http.get(url)
                     .then(getPhonesComplete, getPhonesFailed);
@@ -26,10 +26,10 @@
             }
 
             function getPhonesFailed(error) {
-                return [];
+                return [];//return Error message
             }
         }
-
+//Gets a signle phone
         function findPhone(id) {
 
             return getPhones()
@@ -44,7 +44,7 @@
                             }
                         }, results);
 
-                        return results;
+                        return results;//displays the phone info for each phone
                     });
         }
     }
